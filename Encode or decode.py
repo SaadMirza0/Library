@@ -42,12 +42,11 @@ def full():
                 if(task == "A" or task == "a"):
                             encoding()
                 elif(task == "B" or task == "b"):
-                            decoding()
+                            decoding()         
         else:
             print("Wrong Password")
             full()
     except:
-        print("Don't add string")
+        print("Add code only")
         full()
 full()
-                
