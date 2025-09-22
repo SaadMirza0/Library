@@ -1,12 +1,19 @@
-
 import random
 key = 1122
 #encoding
 def encoding():
     '''This function will encode the word which will added '''
-    a = [1,2,3,4,5,6,7,8,9,0,0,0,0,0,"#","!","@","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-    random_num = random.sample(a,4)
-    random_num2 = random.sample(a,4)
+    a1 = ["1","2","3","4","5","6","7","8","9","0","0","0","0","0","#","!","@","%","*","^","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",	"t","u","v","w","x","y","z","<",">","?","/","`","="]
+    a2 = ['r', '*', 'j', 'u', 'q', '#', 'd', 's', 'm', 'b', '?', '%', '`', "5", 'z', '<', 'o', '^', 'x', "3", 't', 'f', "2", "7", "8", '/', 'a', "6", 'g', "9", 'w', "0", 'c', '>', "0", "0", 'i', 'h', 'k', 'e', 'l', '@', "4", 'p', '!', 'v', "1", "0", "0", 'n', 'y', '=']
+    a3 = []
+    random.shuffle(a1)
+    random.shuffle(a2)
+    for i in a1:
+        for s in a2:
+            a3.append(f"{i}{s}")
+    random.shuffle(a3)
+    random_num = random.sample(a3,4)
+    random_num2 = random.sample(a3,4)
     word = input("Enter for Encode: ")
     c = word[::-1]
     b = list(c)
@@ -17,6 +24,7 @@ def encoding():
     again = again.upper()
     print(again)
     return again
+
 # decoding
 def decoding():
     '''This function will decode the word which will added '''
@@ -50,4 +58,3 @@ def full():
         print("Add code only")
         full()
 full()
-                
