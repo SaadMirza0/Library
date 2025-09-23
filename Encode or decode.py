@@ -3,7 +3,7 @@ key = 1122
 #encoding
 def encoding():
     '''This function will encode the word which will added '''
-    a1 = ["1","2","3","4","5","6","7","8","9","0","0","0","0","0","#","!","@","%","*","^","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s",	"t","u","v","w","x","y","z","<",">","?","/","`","="]
+    a1 = ["1","2","3","4","5","6","7","8","9","0","0","0","0","0","#","!","@","%","*","^","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","<",">","?","/","`","="]
     a2 = ['r', '*', 'j', 'u', 'q', '#', 'd', 's', 'm', 'b', '?', '%', '`', "5", 'z', '<', 'o', '^', 'x', "3", 't', 'f', "2", "7", "8", '/', 'a', "6", 'g', "9", 'w', "0", 'c', '>', "0", "0", 'i', 'h', 'k', 'e', 'l', '@', "4", 'p', '!', 'v', "1", "0", "0", 'n', 'y', '=']
     a3 = []
     random.shuffle(a1)
@@ -17,14 +17,14 @@ def encoding():
     word = input("Enter for Encode: ")
     c = word[::-1]
     b = list(c)
+    tak_word1 = b.pop(0)
+    b.append(tak_word1)
     b.extend(random_num)
     new = random_num2 + b
     # print(new)
     again = "".join(map(str,new))
     again = again.upper()
     print(again)
-    return again
-
 # decoding
 def decoding():
     '''This function will decode the word which will added '''
@@ -32,11 +32,13 @@ def decoding():
     print(code)
     confirmation = input("Are you sure you want to Decode then enter pass : ")
     
-    if (confirmation == "@@@@@"):
+    if (confirmation == "11111"):
         code = code.lower()
         code_list = list(code)
-        code_list = code_list[4:-4]
+        code_list = code_list[8:-8]
         rev = code_list[::-1]
+        final = rev.pop(0)
+        rev.append(final)
         in_str = "".join(map(str,rev))
         print(in_str)
     else:
@@ -58,3 +60,4 @@ def full():
         print("Add code only")
         full()
 full()
+
